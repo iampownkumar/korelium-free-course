@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korleium.org - Free Udemy Courses Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><i class="fas fa-graduation-cap"></i> Korleium.org</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#courses" class="nav-link">Free Courses</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="admin-login.html" class="nav-link admin-login-link">Admin</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Discover Free Udemy Courses</h1>
+                <p>Access thousands of free courses from Udemy's vast collection. Learn new skills, advance your career, and expand your knowledge at no cost.</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">Browse Courses</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for courses...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-tags">
+                    <button class="tag active" data-category="all">All</button>
+                    <button class="tag" data-category="programming">Programming</button>
+                    <button class="tag" data-category="design">Design</button>
+                    <button class="tag" data-category="business">Business</button>
+                    <button class="tag" data-category="marketing">Marketing</button>
+                    <button class="tag" data-category="development">Development</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses Section -->
+        <section id="courses" class="courses-section">
+            <div class="container">
+                <h2 class="section-title">Featured Free Courses</h2>
+                <div class="courses-grid" id="coursesGrid">
+                    <!-- Courses will be dynamically loaded from API -->
+                </div>
+                <div class="load-more">
+                    <button id="loadMoreBtn" class="btn btn-outline">Load More Courses</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Popular Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="programming">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming</h3>
+                        <p>Learn coding languages and software development</p>
+                        <span class="course-count" id="programming-count">Loading...</span>
+                    </div>
+                    <div class="category-card" data-category="design">
+                        <i class="fas fa-palette"></i>
+                        <h3>Design</h3>
+                        <p>Master graphic design, UI/UX, and creative arts</p>
+                        <span class="course-count" id="design-count">Loading...</span>
+                    </div>
+                    <div class="category-card" data-category="business">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Business</h3>
+                        <p>Develop business skills and entrepreneurship</p>
+                        <span class="course-count" id="business-count">Loading...</span>
+                    </div>
+                    <div class="category-card" data-category="marketing">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Marketing</h3>
+                        <p>Digital marketing and growth strategies</p>
+                        <span class="course-count" id="marketing-count">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Korleium.org</h2>
+                        <p>We're dedicated to making quality education accessible to everyone. Our platform curates and presents free Udemy courses across various disciplines, helping learners worldwide access valuable knowledge without financial barriers.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Curated free courses from Udemy</li>
+                            <li><i class="fas fa-check"></i> Regular updates with new courses</li>
+                            <li><i class="fas fa-check"></i> Easy search and filtering</li>
+                            <li><i class="fas fa-check"></i> Multiple categories and skill levels</li>
+                        </ul>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3 id="total-courses-stat">Loading...</h3>
+                            <p>Free Courses</p>
+                        </div>
+                        <div class="stat">
+                            <h3 id="categories-stat">50+</h3>
+                            <p>Categories</p>
+                        </div>
+                        <div class="stat">
+                            <h3 id="learners-stat">10K+</h3>
+                            <p>Happy Learners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Get notified about new free courses and educational opportunities</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@korleium.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Website</h4>
+                            <p>www.korleium.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Support Hours</h4>
+                        <p>24/7 Online Support</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Korleium.org</h3>
+                    <p>Making quality education accessible to everyone through free course collections.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Free Courses</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" data-category="programming">Programming</a></li>
+                        <li><a href="#" data-category="design">Design</a></li>
+                        <li><a href="#" data-category="business">Business</a></li>
+                        <li><a href="#" data-category="marketing">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Korleium.org. All rights reserved. | Making education accessible worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ... existing content ... -->
+
+    <!-- Replace the script tag at the bottom with: -->
+    <script src="script.js"></script>
+    
+    <!-- Add this script to update category counts and stats -->
+    <script>
+        // Update dynamic statistics after courses are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Override the loadCoursesFromAPI function to also update stats
+            const originalLoadCourses = window.loadCoursesFromAPI;
+            window.loadCoursesFromAPI = async function() {
+                await originalLoadCourses();
+                updateWebsiteStats();
+            };
+            
+            // Function to update website statistics
+            async function updateWebsiteStats() {
+                try {
+                    const courses = await APIService.getPublicCourses();
+                    
+                    // Update total courses stat
+                    const totalCoursesElement = document.getElementById('total-courses-stat');
+                    if (totalCoursesElement) {
+                        totalCoursesElement.textContent = courses.length + '+';
+                    }
+                    
+                    // Update category counts
+                    const categoryStats = {};
+                    courses.forEach(course => {
+                        categoryStats[course.category] = (categoryStats[course.category] || 0) + 1;
+                    });
+                    
+                    // Update category count displays
+                    Object.keys(categoryStats).forEach(category => {
+                        const countElement = document.getElementById(`${category}-count`);
+                        if (countElement) {
+                            countElement.textContent = `${categoryStats[category]} courses`;
+                        }
+                    });
+                    
+                    // Add click handlers to category cards
+                    document.querySelectorAll('.category-card[data-category]').forEach(card => {
+                        card.addEventListener('click', function() {
+                            const category = this.dataset.category;
+                            // Find and click the corresponding filter tag
+                            const filterTag = document.querySelector(`[data-category="${category}"]`);
+                            if (filterTag) {
+                                filterTag.click();
+                                // Scroll to courses section
+                                document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+                            }
+                        });
+                    });
+                    
+                } catch (error) {
+                    console.error('Error updating website stats:', error);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

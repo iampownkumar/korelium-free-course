@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Korleium.org</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Check authentication and redirect if not logged in -->
+    <script>
+        if (!localStorage.getItem('adminToken')) {
+            window.location.href = 'admin-login.html';
+        }
+    </script>
+
+    <div class="admin-container">
+        <!-- Admin Header -->
+        <div class="admin-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div>
+                    <h1><i class="fas fa-tachometer-alt"></i> Admin Panel</h1>
+                    <p>Welcome back, <span id="adminUsername">Admin</span></p>
+                </div>
+                <div>
+                    <a href="index.html" class="btn btn-secondary" style="margin-right: 1rem;">
+                        <i class="fas fa-home"></i> View Website
+                    </a>
+                    <button onclick="logout()" class="btn btn-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+            
+            <div class="admin-nav">
+                <button class="admin-nav-btn active" data-section="courses">
+                    <i class="fas fa-book"></i> Manage Courses
+                </button>
+                <button class="admin-nav-btn" data-section="add-course">
+                    <i class="fas fa-plus"></i> Add New Course
+                </button>
+                <button class="admin-nav-btn" data-section="stats">
+                    <i class="fas fa-chart-bar"></i> Statistics
+                </button>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div id="stats-section" class="admin-section hidden">
+            <h2><i class="fas fa-chart-bar"></i> Website Statistics</h2>
+            <div class="form-grid">
+                <div class="stat">
+                    <h3 id="totalCoursesCount">0</h3>
+                    <p>Total Courses</p>
+                </div>
+                <div class="stat">
+                    <h3 id="totalCategoriesCount">0</h3>
+                    <p>Categories</p>
+                </div>
+                <div class="stat">
+                    <h3 id="avgRatingCount">0</h3>
+                    <p>Average Rating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Management Section -->
+        <div id="courses-section" class="admin-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2><i class="fas fa-book"></i> Manage Courses</h2>
+                <button onclick="refreshCourses()" class="btn btn-outline">
+                    <i class="fas fa-refresh"></i> Refresh
+                </button>
+            </div>
+            
+            <div id="coursesLoadingMsg" class="loading">
+                <div class="spinner"></div>
+            </div>
+            
+            <div id="coursesErrorMsg" class="error-message hidden"></div>
+            
+            <div id="coursesTableContainer" class="hidden">
+                <table class="courses-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Instructor</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                            <th>Duration</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coursesTableBody">
+                        <!-- Courses will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add/Edit Course Section -->
+        <div id="add-course-section" class="admin-section hidden">
+            <h2 id="courseFormTitle"><i class="fas fa-plus"></i> Add New Course</h2>
+            
+            <div id="courseFormErrorMsg" class="error-message hidden"></div>
+            <div id="courseFormSuccessMsg" class="success-message hidden"></div>
+            
+            <form id="courseForm" enctype="multipart/form-data">
+                <input type="hidden" id="courseId" name="courseId">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="title">Course Title *</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="slug">Slug *</label>
+                        <input type="text" id="slug" name="slug" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instructor">Instructor *</label>
+                        <input type="text" id="instructor" name="instructor" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="programming">Programming</option>
+                            <option value="design">Design</option>
+                            <option value="business">Business</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="development">Development</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-development">Mobile Development</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="level">Level</label>
+                        <select id="level" name="level">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="All Levels">All Levels</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <input type="text" id="language" name="language" value="English">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" name="duration" placeholder="e.g., 10 hours">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="students">Students Count</label>
+                        <input type="number" id="students" name="students" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <input type="number" id="rating" name="rating" min="0" max="5" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastUpdated">Last Updated</label>
+                        <input type="text" id="lastUpdated" name="lastUpdated" placeholder="e.g., December 2024">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="certificate">Certificate Available</label>
+                        <select id="certificate" name="certificate">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image">Course Image</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                        <div id="currentImage" class="hidden" style="margin-top: 0.5rem;">
+                            <img id="currentImagePreview" src="" alt="Current image" style="max-width: 200px; height: auto; border-radius: 4px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Short Description *</label>
+                    <textarea id="description" name="description" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullDescription">Full Description</label>
+                    <textarea id="fullDescription" name="fullDescription" rows="5"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prerequisites">Prerequisites</label>
+                    <textarea id="prerequisites" name="prerequisites" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="udemyLink">Udemy Course Link *</label>
+                    <input type="url" id="udemyLink" name="udemyLink" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g., JavaScript, React, Web Development">
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatYoullLearn">What You'll Learn (one per line)</label>
+                    <textarea id="whatYoullLearn" name="whatYoullLearn" rows="5" placeholder="Enter each learning outcome on a new line"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" id="submitCourseBtn">
+                        <span class="submit-text">Add Course</span>
+                        <span class="submit-spinner hidden">
+                            <i class="fas fa-spinner fa-spin"></i> Saving...
+                        </span>
+                    </button>
+                    <button type="button" onclick="resetCourseForm()" class="btn btn-outline">Reset Form</button>
+                    <button type="button" onclick="cancelEdit()" class="btn btn-secondary" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Korelium - Elevate Your Learning Experience</title>
+    <meta name="description" content="Korelium - Modern learning platform offering cutting-edge courses in technology, finance, trading, and travel. Elevate your skills with our premium educational content.">
+    <meta name="keywords" content="korelium, online courses, technology, finance, trading, travel, modern learning, premium education">
+    <meta name="author" content="Korelium">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Korelium - Elevate Your Learning Experience">
+    <meta property="og:description" content="Modern learning platform with cutting-edge courses in technology, finance, trading, and travel.">
+    <meta property="og:url" content="https://korelium.org">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Korelium">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@korelium">
+    <meta name="twitter:creator" content="@korelium">
+    <meta name="twitter:title" content="Korelium - Elevate Your Learning Experience">
+    <meta name="twitter:description" content="Modern learning platform with cutting-edge courses in technology, finance, trading, and travel.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/604803b7-b51d-4f0c-97be-e6ae5b305935.png" type="image/png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="app.js" as="script">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Korelium",
+        "url": "https://korelium.org",
+        "logo": "https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/604803b7-b51d-4f0c-97be-e6ae5b305935.png",
+        "sameAs": [
+            "https://twitter.com/korelium"
+        ],
+        "description": "Modern learning platform offering cutting-edge courses in technology, finance, trading, and travel",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Global"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="background-elements">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+        <div class="particle-system" id="particles"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/604803b7-b51d-4f0c-97be-e6ae5b305935.png" alt="Korelium Logo">
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Initializing Korelium...</p>
+        </div>
+    </div>
+
+    <!-- Glass Navigation -->
+    <nav class="glass-nav" id="glass-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/604803b7-b51d-4f0c-97be-e6ae5b305935.png" alt="Korelium Logo" class="brand-logo">
+                <span class="brand-text">Korelium</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-page="home">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-page="about">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">About</span>
+                </a>
+                <a href="#portfolio" class="nav-link" data-page="portfolio">
+                    <span class="nav-icon">💼</span>
+                    <span class="nav-text">Portfolio</span>
+                </a>
+                <a href="#freelance" class="nav-link" data-page="freelance">
+                    <span class="nav-icon">🚀</span>
+                    <span class="nav-text">Services</span>
+                </a>
+                <a href="#blog" class="nav-link" data-page="blog">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-text">Blog</span>
+                </a>
+                <a href="#courses" class="nav-link" data-page="courses">
+                    <span class="nav-icon">🎓</span>
+                    <span class="nav-text">Courses</span>
+                </a>
+                <a href="#contact" class="nav-link" data-page="contact">
+                    <span class="nav-icon">📞</span>
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/604803b7-b51d-4f0c-97be-e6ae5b305935.png" alt="Korelium Logo" class="mobile-logo">
+                <span class="mobile-brand">Korelium</span>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="#home" class="mobile-nav-link" data-page="home">
+                    <span class="mobile-nav-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="mobile-nav-link" data-page="about">
+                    <span class="mobile-nav-icon">👥</span>
+                    <span>About</span>
+                </a>
+                <a href="#portfolio" class="mobile-nav-link" data-page="portfolio">
+                    <span class="mobile-nav-icon">💼</span>
+                    <span>Portfolio</span>
+                </a>
+                <a href="#freelance" class="mobile-nav-link" data-page="freelance">
+                    <span class="mobile-nav-icon">🚀</span>
+                    <span>Services</span>
+                </a>
+                <a href="#blog" class="mobile-nav-link" data-page="blog">
+                    <span class="mobile-nav-icon">📝</span>
+                    <span>Blog</span>
+                </a>
+                <a href="#courses" class="mobile-nav-link" data-page="courses">
+                    <span class="mobile-nav-icon">🎓</span>
+                    <span>Courses</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link" data-page="contact">
+                    <span class="mobile-nav-icon">📞</span>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Home Page -->
+        <section id="home" class="page page-active">
+            <!-- Hero Section with Particle System -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Elevate Your</span>
+                            <span class="title-line gradient-text">Learning Experience</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Discover cutting-edge courses in technology, finance, trading, and travel. 
+                            Join thousands of learners transforming their careers with Korelium's premium educational content.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number" data-count="10000">0</div>
+                                <div class="stat-label">Active Learners</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-count="150">0</div>
+                                <div class="stat-label">Expert Courses</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-count="95">0</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <button class="cta-button primary" data-page="courses">
+                                <span class="button-text">Explore Courses</span>
+                                <span class="button-icon">🚀</span>
+                            </button>
+                            <button class="cta-button secondary" data-page="about">
+                                <span class="button-text">Learn More</span>
+                                <span class="button-icon">💡</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="floating-card card-1">
+                            <div class="card-icon">🎓</div>
+                            <h4>Premium Courses</h4>
+                            <p>Expert-led content</p>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">⚡</div>
+                            <h4>Fast Learning</h4>
+                            <p>Accelerated growth</p>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-icon">🏆</div>
+                            <h4>Certificates</h4>
+                            <p>Industry recognized</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Courses Section -->
+            <div class="featured-section">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Courses</h2>
+                    <p class="section-subtitle">Handpicked courses to accelerate your career</p>
+                </div>
+                <div class="featured-courses" id="featured-courses">
+                    <!-- Courses will be loaded here -->
+                </div>
+                <div class="section-cta">
+                    <button class="view-all-btn" data-page="courses">
+                        View All Courses
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Testimonials Section -->
+            <div class="testimonials-section">
+                <div class="section-header">
+                    <h2 class="section-title">What Our Students Say</h2>
+                    <p class="section-subtitle">Success stories from our learning community</p>
+                </div>
+                <div class="testimonials-slider" id="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Korelium transformed my vision into reality with exceptional quality and attention to detail."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩</div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Startup Founder</p>
+                            </div>
+                            <div class="testimonial-rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Outstanding technical expertise and professional communication throughout the project."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👨</div>
+                            <div class="author-info">
+                                <h4>Mike Chen</h4>
+                                <p>Product Manager</p>
+                            </div>
+                            <div class="testimonial-rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Delivered beyond expectations with innovative solutions and perfect execution."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩</div>
+                            <div class="author-info">
+                                <h4>Lisa Rodriguez</h4>
+                                <p>Marketing Director</p>
+                            </div>
+                            <div class="testimonial-rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title gradient-text">About Korelium</h1>
+                    <p class="page-subtitle">Pioneering the future of digital education</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-story">
+                        <div class="story-text">
+                            <h2>Our Mission</h2>
+                            <p>At Korelium, we believe in democratizing access to high-quality education. Our mission is to empower learners worldwide with cutting-edge skills and knowledge that drive real career transformation.</p>
+                            
+                            <h3>What Sets Us Apart</h3>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🎯</div>
+                                    <h4>Expert-Led Content</h4>
+                                    <p>Courses designed by industry veterans with years of practical experience</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🚀</div>
+                                    <h4>Cutting-Edge Curriculum</h4>
+                                    <p>Stay ahead with the latest technologies and methodologies</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🤝</div>
+                                    <h4>Community Driven</h4>
+                                    <p>Join a vibrant community of learners and professionals</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📊</div>
+                                    <h4>Real Results</h4>
+                                    <p>Track your progress with advanced analytics and assessments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <h2>Our Expertise</h2>
+                        <div class="expertise-areas">
+                            <div class="expertise-card">
+                                <div class="expertise-icon">💻</div>
+                                <h3>Technology</h3>
+                                <p>Web development, mobile apps, AI/ML, blockchain, and emerging tech trends</p>
+                            </div>
+                            <div class="expertise-card">
+                                <div class="expertise-icon">💰</div>
+                                <h3>Finance</h3>
+                                <p>Personal finance, investment strategies, cryptocurrency, and financial planning</p>
+                            </div>
+                            <div class="expertise-card">
+                                <div class="expertise-icon">📈</div>
+                                <h3>Trading</h3>
+                                <p>Stock market analysis, forex trading, risk management, and portfolio optimization</p>
+                            </div>
+                            <div class="expertise-card">
+                                <div class="expertise-icon">✈️</div>
+                                <h3>Travel</h3>
+                                <p>Travel planning, digital nomad lifestyle, cultural immersion, and remote work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Page -->
+        <section id="portfolio" class="page">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title gradient-text">Our Portfolio</h1>
+                    <p class="page-subtitle">Showcasing innovation through exceptional projects</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">📱</div>
+                            </div>
+                            <div class="project-content">
+                                <h3>EduTech Platform</h3>
+                                <p>Full-stack learning management system with AI-powered personalization</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">AI/ML</span>
+                                </div>
+                                <div class="project-stats">
+                                    <span>50K+ Users</span>
+                                    <span>98% Satisfaction</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">📊</div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Trading Analytics Suite</h3>
+                                <p>Advanced financial analytics platform with real-time market data</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">WebSockets</span>
+                                </div>
+                                <div class="project-stats">
+                                    <span>1M+ Trades</span>
+                                    <span>Real-time Data</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">🌍</div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Travel Companion App</h3>
+                                <p>AI-powered travel planning with smart recommendations</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">Express</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                </div>
+                                <div class="project-stats">
+                                    <span>100K+ Downloads</span>
+                                    <span>4.8★ Rating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Freelance Services Page -->
+        <section id="freelance" class="page">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title gradient-text">Professional Services</h1>
+                    <p class="page-subtitle">Transform your business with our expert solutions</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card premium">
+                        <div class="service-header">
+                            <div class="service-icon">💻</div>
+                            <h3>Web Development</h3>
+                            <p class="service-price">Starting at $2,500</p>
+                        </div>
+                        <p class="service-description">Custom web applications and websites built with modern technologies</p>
+                        <ul class="service-features">
+                            <li>Responsive Design</li>
+                            <li>Modern Tech Stack</li>
+                            <li>SEO Optimized</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <button class="service-btn">Get Started</button>
+                    </div>
+                    
+                    <div class="service-card featured">
+                        <div class="service-header">
+                            <div class="service-icon">📱</div>
+                            <h3>Mobile Apps</h3>
+                            <p class="service-price">Starting at $5,000</p>
+                        </div>
+                        <p class="service-description">iOS and Android app development with native performance</p>
+                        <ul class="service-features">
+                            <li>Native Performance</li>
+                            <li>Cross-platform</li>
+                            <li>App Store Ready</li>
+                            <li>Maintenance Included</li>
+                        </ul>
+                        <button class="service-btn">Get Started</button>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">🎯</div>
+                            <h3>Consulting</h3>
+                            <p class="service-price">Starting at $150/hour</p>
+                        </div>
+                        <p class="service-description">Technical consultation and strategic planning services</p>
+                        <ul class="service-features">
+                            <li>Expert Advice</li>
+                            <li>Strategic Planning</li>
+                            <li>Code Review</li>
+                            <li>Flexible Hours</li>
+                        </ul>
+                        <button class="service-btn">Get Started</button>
+                    </div>
+                </div>
+                
+                <div class="process-section">
+                    <h2>Our Process</h2>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Discovery</h4>
+                            <p>Understanding your needs and goals</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Planning</h4>
+                            <p>Detailed project roadmap and timeline</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Development</h4>
+                            <p>Building your solution with regular updates</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Launch</h4>
+                            <p>Deployment and ongoing support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Page -->
+        <section id="blog" class="page">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title gradient-text">Our Blog</h1>
+                    <p class="page-subtitle">Insights, tutorials, and industry trends</p>
+                </div>
+                
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-category="all">All Posts</button>
+                    <button class="filter-btn" data-category="technology">Technology</button>
+                    <button class="filter-btn" data-category="finance">Finance</button>
+                    <button class="filter-btn" data-category="trading">Trading</button>
+                    <button class="filter-btn" data-category="travel">Travel</button>
+                </div>
+                
+                <div class="blog-grid" id="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <div class="blog-category tech">Technology</div>
+                            <div class="blog-date">Aug 23, 2025</div>
+                        </div>
+                        <h3 class="blog-title">The Future of Web Development</h3>
+                        <p class="blog-excerpt">Exploring emerging trends and technologies that will shape web development in 2025 and beyond.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">👨‍💻</div>
+                                <span>Korelium Team</span>
+                            </div>
+                            <button class="read-more">Read More →</button>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <div class="blog-category finance">Finance</div>
+                            <div class="blog-date">Aug 20, 2025</div>
+                        </div>
+                        <h3 class="blog-title">Cryptocurrency Investment Strategies</h3>
+                        <p class="blog-excerpt">A comprehensive guide to building a diversified cryptocurrency portfolio with risk management techniques.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">💰</div>
+                                <span>Korelium Team</span>
+                            </div>
+                            <button class="read-more">Read More →</button>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <div class="blog-category trading">Trading</div>
+                            <div class="blog-date">Aug 18, 2025</div>
+                        </div>
+                        <h3 class="blog-title">Advanced Trading Psychology</h3>
+                        <p class="blog-excerpt">Master your emotions and develop the mental framework needed for successful trading.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">📈</div>
+                                <span>Korelium Team</span>
+                            </div>
+                            <button class="read-more">Read More →</button>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <div class="blog-category travel">Travel</div>
+                            <div class="blog-date">Aug 15, 2025</div>
+                        </div>
+                        <h3 class="blog-title">Digital Nomad Essentials</h3>
+                        <p class="blog-excerpt">Everything you need to know to start your digital nomad journey and work remotely from anywhere.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">✈️</div>
+                                <span>Korelium Team</span>
+                            </div>
+                            <button class="read-more">Read More →</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Page -->
+        <section id="courses" class="page">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title gradient-text">Our Courses</h1>
+                    <p class="page-subtitle">Master new skills with our comprehensive curriculum</p>
+                </div>
+                
+                <div class="courses-controls">
+                    <div class="search-section">
+                        <div class="search-container">
+                            <input type="text" id="course-search" class="search-input" placeholder="Search courses...">
+                            <button class="search-btn">🔍</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filters-section">
+                        <select id="category-filter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="technology">Technology</option>
+                            <option value="finance">Finance</option>
+                            <option value="trading">Trading</option>
+                            <option value="travel">Travel</option>
+                        </select>
+                        <select id="level-filter" class="filter-select">
+                            <option value="">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="courses-grid" id="courses-grid">
+                    <!-- Courses will be loaded here -->
+                </div>
+                
+                <div class="pagination-section" id="pagination">
+                    <!-- Pagination will be generated here -->
+                </div>
+                
+                <div id="courses-error" class="error-state hidden">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Unable to load courses</h3>
+                    <p>Please check your connection and try again.</p>
+                    <button class="retry-btn" onclick="loadCourses(1)">Retry</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title gradient-text">Get In Touch</h1>
+                    <p class="page-subtitle">Let's discuss your learning journey or project needs</p>
+                </div>
+                
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <h3>Connect With Us</h3>
+                        <p>Ready to transform your skills or start a project? We're here to help you succeed.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">📧</div>
+                                <div class="method-content">
+                                    <h4>Email</h4>
+                                    <a href="mailto:hello@korelium.org">hello@korelium.org</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">🐦</div>
+                                <div class="method-content">
+                                    <h4>Social Media</h4>
+                                    <a href="https://twitter.com/korelium" target="_blank" rel="noopener">@korelium</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">🌐</div>
+                                <div class="method-content">
+                                    <h4>Website</h4>
+                                    <a href="https://korelium.org" target="_blank" rel="noopener">korelium.org</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="newsletter-section">
+                            <h4>Stay Updated</h4>
+                            <p>Subscribe to our newsletter for the latest courses and insights</p>
+                            <form class="newsletter-form" id="newsletter-form">
+                                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                                <button type="submit" class="newsletter-btn">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-section">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name</label>
+                                    <input type="text" id="contact-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address</label>
+                                    <input type="email" id="contact-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <select id="contact-subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="courses">Course Inquiry</option>
+                                    <option value="freelance">Freelance Project</option>
+                                    <option value="collaboration">Partnership</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" rows="6" placeholder="Tell us about your needs..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span>Send Message</span>
+                                <span class="btn-icon">🚀</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/604803b7-b51d-4f0c-97be-e6ae5b305935.png" alt="Korelium Logo">
+                    <span class="footer-brand-text">Korelium</span>
+                </div>
+                <p class="footer-tagline">Elevating learning experiences worldwide</p>
+                <div class="social-links">
+                    <a href="https://twitter.com/korelium" target="_blank" rel="noopener" aria-label="Follow us on Twitter">🐦</a>
+                </div>
+            </div>
+            
+            <div class="footer-links-section">
+                <div class="footer-column">
+                    <h4>Learning</h4>
+                    <a href="#courses" data-page="courses">All Courses</a>
+                    <a href="#blog" data-page="blog">Blog</a>
+                    <a href="#about" data-page="about">About Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="#freelance" data-page="freelance">Web Development</a>
+                    <a href="#freelance" data-page="freelance">Mobile Apps</a>
+                    <a href="#freelance" data-page="freelance">Consulting</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <a href="#contact" data-page="contact">Contact Us</a>
+                    <a href="mailto:hello@korelium.org">Email</a>
+                    <a href="https://korelium.org" target="_blank" rel="noopener">Website</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Korelium. All rights reserved.</p>
+            <p>Made with ❤️ for learners worldwide</p>
+        </div>
+    </footer>
+
+    <!-- Course Detail Modal -->
+    <div id="course-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="course-modal-content">
+                <!-- Course details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
