@@ -1,0 +1,56 @@
+/api/admin/login	POST	No	Admin login, returns JWT token
+/api/courses    	GET	Yes (JWT)	Get all courses (admin access)
+/api/courses    	POST	Yes (JWT)	Create course with image upload
+/api/courses/:id	PUT	Yes (JWT)	Update course by ID
+/api/courses/:id	DELETE	Yes (JWT)	Delete course by ID
+/public/courses	    GET	No	Public get all courses
+
+To provide all your API URLs with the `localhost:9000` prefix, here is a list of your endpoints formatted with that base URL:
+
+***
+
+## Admin APIs (Base URL: `http://localhost:9000/api/admin`)
+
+- **Login**  
+  `POST http://localhost:9000/api/admin/login`  
+  Authenticate admin, returns JWT token
+
+***
+
+## Course APIs (Base URL: `http://localhost:9000/api/courses`)
+
+- **Get all courses (protected)**  
+  `GET http://localhost:9000/api/courses`  
+
+- **Create course (protected, multipart/form-data with image)**  
+  `POST http://localhost:9000/api/courses`
+
+- **Update course by ID (protected, multipart/form-data with option image)**  
+  `PUT http://localhost:9000/api/courses/:id`  
+  Replace `:id` with actual course ID
+
+- **Delete course by ID (protected)**  
+  `DELETE http://localhost:9000/api/courses/:id`  
+  Replace `:id` with actual course ID
+
+***
+
+## Public APIs (Base URL: `http://localhost:9000/public`)
+
+- **Get all courses (no authentication)**  
+  `GET http://localhost:9000/public/courses`
+
+***
+
+You can use these URLs directly in Postman, your frontend, or any HTTP client with the appropriate HTTP methods and request bodies.
+
+If you want me to generate a full Postman collection JSON with these configured, just ask!
+
+[1] https://stackoverflow.com/questions/33953447/express-app-server-listen-all-interfaces-instead-of-localhost-only
+[2] https://faun.pub/creating-a-simple-node-js-server-using-express-handling-incoming-requests-sending-responses-ba870ca68a0e
+[3] https://stackoverflow.com/questions/33953447/express-app-server-listen-all-interfaces-instead-of-localhost-only/33957043
+[4] https://expressjs.com/en/starter/hello-world.html
+[5] https://webpack.js.org/configuration/dev-server/
+[6] https://discuss.circleci.com/t/cant-connect-to-node-http-server-running-on-localhost/19857
+[7] https://github.com/angular-fullstack/generator-angular-fullstack/issues/107
+[8] https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b/comments
