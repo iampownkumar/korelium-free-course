@@ -1,0 +1,21 @@
+{
+  "name": "freecourses-api-server",
+  "version": "1.0.0",
+  "description": "API server for Free Courses platform",
+  "main": "api-server.js",
+  "scripts": {
+    "start": "node api-server.js",
+    "dev": "nodemon api-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["api", "courses", "education", "websocket"],
+  "author": "Your Name",
+  "license": "MIT"
+}
